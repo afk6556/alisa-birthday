@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Алисе 18 ✨</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #2b2b2b;
+      overflow-x: hidden;
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 720px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      text-align: center;
+      animation: fadeIn 1.2s ease;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    button {
+      margin-top: 30px;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff6a88, #ff99ac);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    }
+    .hidden { display: none; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .footer {
+      font-size: 0.9rem;
+      margin-top: 40px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+<section id="screen1">
+  <div class="card">
+    <h1>Алиса 🎂</h1>
+    <h2>Сегодня тебе 18</h2>
+    <p>
+      Есть дни, которые хочется сохранить навсегда.
+      И этот — именно такой.
+    </p>
+    <button onclick="nextScreen(2)">Нажми ✨</button>
+  </div>
+</section>
+
+<section id="screen2" class="hidden">
+  <div class="card">
+    <h1>18 — это особенное число</h1>
+    <p>
+      Это про свободу, смелость и выбор.<br>
+      Про мечты, которые становятся ближе.<br>
+      Про мир, который теперь открыт чуть шире.
+    </p>
+    <button onclick="nextScreen(3)">Дальше 💫</button>
+  </div>
+</section>
+
+<section id="screen3" class="hidden">
+  <div class="card">
+    <h1>Алиса, будь собой</h1>
+    <p>
+      Будь громкой, если хочется.<br>
+      Будь тихой, если нужно.<br>
+      Будь счастливой — всегда.
+    </p>
+    <button onclick="nextScreen(4)">Ещё 💖</button>
+  </div>
+</section>
+
+<section id="screen4" class="hidden">
+  <div class="card">
+    <h1>С днём рождения 🎉</h1>
+    <p>
+      Пусть этот год принесёт тебе
+      удачу, вдохновение,
+      веру в себя и людей рядом.
+    </p>
+    <p><strong>С 18-летием, Алиса!</strong></p>
+    <div class="footer">Этот сайт сделан специально для тебя 💗</div>
+  </div>
+</section>
+
+<script>
+  function nextScreen(n) {
+    document.querySelectorAll('section').forEach(s => s.classList.add('hidden'));
+    document.getElementById('screen' + n).classList.remove('hidden');
+    window.scrollTo(0,0);
+  }
+</script>
+
+</body>
+</html>
+
